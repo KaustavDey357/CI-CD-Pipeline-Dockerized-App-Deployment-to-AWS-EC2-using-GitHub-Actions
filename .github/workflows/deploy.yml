@@ -36,9 +36,6 @@ jobs :
                     docker rm -f container_name || true
                     docker run -d -p 80:80 --name container_name your-dockerhub-username/your-image-name:tag
 
-                    # Optional: only needed if you're running Node apps with PM2
-                    pm2 restart app || true
-
                     # Restart nginx (in case you're using it as a reverse proxy)
                     sudo systemctl restart nginx
 
