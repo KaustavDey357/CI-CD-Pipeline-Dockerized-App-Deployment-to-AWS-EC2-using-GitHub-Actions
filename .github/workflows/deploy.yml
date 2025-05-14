@@ -28,11 +28,12 @@ jobs :
             - name: Deploy via SSH to EC2
               uses: appleboy/ssh-action@v0.1.0
               with:
-                host: "YOUR_EC2_PUBLIC_IP"
-                username: "ec2-user" # or "ubuntu", depending on your AMI
+                host: ${{ secrets.EC2_HOST }}
+                username: ${{ secrets.EC2_USER }} # or "ubuntu", depending on your AMI
                 port: 22
-                key: ${{ secrets.AWS_SSH_KEY }}
+                key: ${{ secrets.EC2_SSH_KEY }}
                 script: |
+                    cd ${{ secrets.EC2_PATH }}
                     docker rm -f container_name || true
                     docker run -d -p 80:80 --name container_name your-dockerhub-username/your-image-name:tag
 
