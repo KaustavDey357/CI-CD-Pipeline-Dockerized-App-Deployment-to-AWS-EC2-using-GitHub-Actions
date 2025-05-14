@@ -117,3 +117,14 @@ Make sure the port is open in your EC2 Security Group.
 docker build -t my-app .
 docker run -p 3000:3000 my-app
 ```
+
+## Author
+
+**Kaustav Dey**
+
+* GitHub: [@KaustavDey357](https://github.com/KaustavDey357)
+* LinkedIn: [linkedin.com/in/KaustavDey357](https://www.linkedin.com/in/kaustav-dey-107593244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+* Portfolio: [KaustavDey357.github.io](https://KaustavDey357.github.io)
+
+---
+```
