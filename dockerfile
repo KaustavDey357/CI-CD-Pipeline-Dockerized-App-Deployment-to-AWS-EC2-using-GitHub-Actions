@@ -9,4 +9,4 @@ copy . .
 
 Expose 4000
 
-cmd ["pm2-runtime", "app.js", "--name", "app-hello"]
+cmd ["pm2-runtime", "app/app.js", "--name", "app-hello"]
