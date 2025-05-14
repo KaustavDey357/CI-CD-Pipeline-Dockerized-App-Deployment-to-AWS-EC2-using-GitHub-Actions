@@ -54,12 +54,15 @@ cd cicd-ec2-docker
 
 #### **2. Fill in Secrets (GitHub Settings → Secrets)**
 
-| Key | Description |
-| ------------- | ----------------------------------------------- |
-| `EC2_HOST` | EC2 public IP or DNS |
-| `EC2_USER` | Usually `ubuntu` |
-| `EC2_SSH_KEY` | Your private key (PEM), base64-encoded |
-| `EC2_PATH` | Path to deploy files (e.g., `/home/ubuntu/app`) |
+| Key                  | Description                                       |
+| -------------------- | ------------------------------------------------- |
+| `EC2_HOST`           | EC2 public IP or DNS                              |
+| `EC2_USER`           | Usually `ubuntu`                                  |
+| `EC2_SSH_KEY`        | Your private key (PEM), base64-encoded            |
+| `EC2_PATH`           | Path to deploy files (e.g., `/home/ubuntu/app`)   |
+| `DOCKERHUB_USERNAME` | Your Docker Hub username                          |
+| `DOCKERHUB_TOKEN`    | Your Docker Hub access token (stored as a secret) |
+
 
 ---
 
