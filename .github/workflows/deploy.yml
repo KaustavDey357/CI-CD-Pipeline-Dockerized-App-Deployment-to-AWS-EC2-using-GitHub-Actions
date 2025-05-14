@@ -34,6 +34,7 @@ jobs :
                 key: ${{ secrets.EC2_SSH_KEY }}
                 script: |
                     cd ${{ secrets.EC2_PATH }}
+                    docker stop conatiner_name
                     docker rm -f container_name || true
                     docker run -d -p 80:80 --name container_name your-dockerhub-username/your-image-name:tag
 
