@@ -45,14 +45,22 @@ AWS EC2 Instance (App deployed)
 
 ### **Getting Started**
 
-#### **1. Clone the Repo**
+#### **1. Initializing The Ec2 Instance using Terraform**
+```bash
+terraform init
+terraform plan -var 'key_pair=your-key-name'
+terraform apply -var 'key_pair=your-key-name'
+```
+Set enable_elb = true to deploy with an ELB.
+
+#### **2. Clone the Repo**
 
 ```bash
 git clone https://github.com/yourusername/cicd-ec2-docker.git
 cd cicd-ec2-docker
 ```
 
-#### **2. Fill in Secrets (GitHub Settings → Secrets)**
+#### **3. Fill in Secrets (GitHub Settings → Secrets)**
 
 | Key                  | Description                                       |
 | -------------------- | ------------------------------------------------- |
@@ -66,7 +74,7 @@ cd cicd-ec2-docker
 
 ---
 
-### **3. Deploy Pipeline**
+### **4. Deploy Pipeline**
 
 Each push to `main` branch triggers:
 
@@ -92,6 +100,10 @@ Which does:
 ```
 .
 ├── .github/workflows/deploy.yml # GitHub Actions pipeline
+├── terraform/
+│ └── main.tf
+│ └── variables.tf
+│ └── outputs.tf
 ├── Dockerfile # Builds app container
 ├── app/ # Your Node.js / Python app
 ├── scripts/
